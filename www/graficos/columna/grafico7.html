@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Datum</title>
+	<link rel="stylesheet" href="./../../tema/css/estilos.css">
+    <link rel="stylesheet" href="./../../icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../fonts/style.css">
+    <script src="./../../js/jquery.min.js"></script>
+    <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+    <script src="./../../js/highstock.js"></script>
+    <script src="./../../js/data.js"></script>
+    <script src="./../../js/exporting.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		$(document).ready(function() { 
+			
+$('#grafico1 .area').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Labor de los presidentes del Congreso frente a sus antecesores'
+        },
+        subtitle: {
+            text: '¿Piensa Ud. que … hará una mejor labor, igual labor o peor labor que la realizada por su antecesor en la Presidencia del Congreso?'
+        },
+        xAxis: {
+            categories: [
+                'Victor Isla frente a<br>Daniel Abugattás',
+                'Fredy Otárola<br>frente a Victor Isla',
+                'Ana María Solórzano<br>frente a Fredy Otárola',
+                'Luis Iberico frente a<br>Ana María Solórzano'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Rainfall (mm)'
+            }
+        },
+        tooltip: {
+            enabled:false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 1,
+                pointWidth: 30,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%',
+                    rotation: 0,
+                    defer: false,
+                    style: {
+                        fontWeight: 'bold',
+                        fontSize: '10px'
+                    }
+                }
+            }
+        },
+        series: [{
+            color:"#0070C0",
+            name: 'Mejor',
+            data: [23,15,16,27]
+
+        }, {
+            color:"#00B0F0",
+            name: 'Igual',
+            data: [34,33,40,35]
+
+        },{
+            color:"#B7DEE8",
+            name: 'Peor',
+            data: [11,15,14,10]
+
+        }, {
+            color:"#BFBFBF",
+            name: 'Ns/nc',
+            data: [32,37,30,28]
+
+        }],
+        credits:{
+	        	enabled:false
+	        },
+	        exporting:{
+	        	enabled:false
+	        }
+    });
+				
+				
+			
+				
+		
+
+		    
+		});
+	</script>
+</head>
+<body>
+    <div class="intro">
+      <div class="topbar">
+        <div class="icon__pantalla"><a href="./../../coyuntura.html"><i class="fa fa-arrow-left"></i></a></div>
+        <div class="title"> <strong>COYUNTURA</strong></div>
+      </div>
+      <div class="grupo">
+        <div class="caja total">
+          <div class="description">
+            <div id="grafico1">     
+                <div class="area" style="height:550px; width:100%"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="grupo">
+        <div class="caja total">
+            <div class="botones">
+                <div class="boton"><a href="#">Compartir</a></div>
+                <div class="boton"><a href="./fichatecnica7.html">Ver resumen de ficha técnica</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><img src="./../../media/bar-footer.png"></div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Datum</title>
+	<link rel="stylesheet" href="./../../tema/css/estilos.css">
+    <link rel="stylesheet" href="./../../icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../fonts/style.css">
+    <script src="./../../js/jquery.min.js"></script>
+    <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+    <script src="./../../js/highstock.js"></script>
+    <script src="./../../js/data.js"></script>
+    <script src="./../../js/exporting.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		$(document).ready(function() { 
+			
+$('#grafico1 .area').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '¿Aprueba o desaprueba la labor pública que viene desarrollando …?'
+        },
+        subtitle: {
+            text: '<strong>Luis Iberico</strong><br>Presidente del Congreso de la República'
+        },
+        xAxis: {
+            type: 'category',
+            title:{
+                text:""
+            }
+        },
+        yAxis: {
+        	min: 0,
+        	max: 20.0,
+            title: {
+                text: ''
+            }
+
+        },
+        legend: {
+            enabled: true
+        },
+        plotOptions: {
+            column:{
+                groupPadding:1
+            },
+            series: {
+                borderWidth: 1,
+                pointWidth: 30,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%',
+                    rotation: 0,
+                    defer: false,
+                    style: {
+                        fontWeight: 'bold',
+                        fontSize: '10px'
+                    }
+                }
+            }
+        },
+
+        tooltip: {
+            enabled:false,
+            animated: false
+        },
+
+        series: [{
+            color:"#0070C0",
+            name: "Aprueba",
+            data: [{
+                y: 11.0
+            }]
+        },
+        {
+            color:"#FF0000",
+            name: "Desaprueba",
+            data: [{
+                y: 10.9
+            }]
+        },{
+            color:"#BFBFBF",
+            name: "NS/NC",
+            data: [{
+                y: 9.1
+            }]
+        }
+        ],
+        credits:{
+	        	enabled:false
+	        },
+	        exporting:{
+	        	enabled:false
+	        }
+    });
+				
+				
+			
+				
+		
+
+		    
+		});
+	</script>
+</head>
+<body>
+    <div class="intro">
+      <div class="topbar">
+        <div class="icon__pantalla"><a href="./../../popularidad.html"><i class="fa fa-arrow-left"></i></a></div>
+        <div class="title"> <strong>POPULARIDAD</strong></div>
+      </div>
+      <div class="grupo">
+        <div class="caja total">
+          <div class="description">
+            <div id="grafico1">     
+                <div class="area" style="height:550px; width:100%"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="grupo">
+        <div class="caja total">
+            <div class="botones">
+                <div class="boton"><a href="#">Compartir</a></div>
+                <div class="boton"><a href="./fichatecnica1.html">Ver resumen de ficha técnica</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><img src="./../../media/bar-footer.png"></div>
+</body>
+</html>

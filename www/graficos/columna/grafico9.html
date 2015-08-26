@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Datum</title>
+	<link rel="stylesheet" href="./../../tema/css/estilos.css">
+    <link rel="stylesheet" href="./../../icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../fonts/style.css">
+    <script src="./../../js/jquery.min.js"></script>
+    <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+    <script src="./../../js/highstock.js"></script>
+    <script src="./../../js/data.js"></script>
+    <script src="./../../js/exporting.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		$(document).ready(function() { 
+			
+$('#grafico1 .area').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Actualmente, ¿quién es la persona que tiene más poder en el Perú?'
+        },
+        subtitle: {
+            text: '- cinco primeros lugares -'
+        },
+        xAxis: {
+            categories: [
+                'Ollanta<br>Humala',
+                'Nadine<br>Heredia',
+                'Alan<br>Garcia',
+                'Keiko<br>Fujimori',
+                'Dionisio<br>Romero*',
+                'Otras<br>Personas',
+                'Ns/nc'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Rainfall (mm)'
+            }
+        },
+        tooltip: {
+            enabled:false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 1,
+                pointWidth: 30,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%',
+                    rotation: 0,
+                    defer: false,
+                    style: {
+                        fontWeight: 'bold',
+                        fontSize: '10px'
+                    }
+                }
+            }
+        },
+        series: [{
+            color:"#B7DEE8",
+            name: 'Setiembre 2012',
+            data: [30,18,15,7,6,12,12]
+
+        }, {
+            color:"#FFD1F3",
+            name: 'Setiembre 2013',
+            data: [28,20,12,6,7,14,13]
+
+        },{
+            color:"#FF9393",
+            name: 'Setiembre 2014',
+            data: [25,26,13,5,5,14,12]
+
+        }, {
+            color:"#C00000",
+            name: 'Agosto 2015',
+            data: [22,19,16,6,4,14,18]
+
+        }],
+        credits:{
+	        	enabled:false
+	        },
+	        exporting:{
+	        	enabled:false
+	        }
+    });
+
+		    
+		});
+	</script>
+</head>
+<body>
+    <div class="intro">
+      <div class="topbar">
+        <div class="icon__pantalla"><a href="./../../temafondo.html"><i class="fa fa-arrow-left"></i></a></div>
+        <div class="title"> <strong>TEMA DE FONDO</strong></div>
+      </div>
+      <div class="grupo">
+        <div class="caja total">
+          <div class="description">
+            <div id="grafico1">     
+                <div class="area" style="height:550px; width:100%"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="grupo">
+        <div class="caja total">
+            <div class="botones">
+                <div class="boton"><a href="#">Compartir</a></div>
+                <div class="boton"><a href="./fichatecnica9.html">Ver resumen de ficha técnica</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><img src="./../../media/bar-footer.png"></div>
+</body>
+</html>

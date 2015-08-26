@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Datum</title>
+	<link rel="stylesheet" href="./../../tema/css/estilos.css">
+    <link rel="stylesheet" href="./../../icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../fonts/style.css">
+    <script src="./../../js/jquery.min.js"></script>
+    <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+    <script src="./../../js/highstock.js"></script>
+    <script src="./../../js/data.js"></script>
+    <script src="./../../js/exporting.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script>
+		$(document).ready(function() { 
+			
+$('#grafico1 .area').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Candidato más transparente<br>- listado sugerido de personas -'
+        },
+        subtitle: {
+            text: 'En su opinión, ¿cuál de los siguientes posibles candidatos será más transparente en la presentación de sus propiedades e ingresos?'
+        },
+        xAxis: {
+            categories: ['Keiko Fujimori', 'Pedro P. Kuczynski', 'Alan Garcia', 'César Acuña', 'Daniel Urresti','Humberto Lay Sun','Alejandro Toledo','Yehude Simon','Antero Flores Aráoz','Otros Candidatos','Ninguno','Ns/nc']
+        },
+        yAxis: {
+            min: 0,
+            showEmpty:false,
+            title: {
+                text: null
+            }
+        },
+        tooltip: {
+            enabled:false,
+            animated: false
+        },
+        legend: {
+            reversed: false,
+            enabled: false
+        },
+        plotOptions: {
+            //series: {
+                //stacking: 'normal'
+            //},
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontSize: '10px'
+                    }
+                }
+            },
+            bar: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:f}%'
+                }
+            }
+        },
+        series: [{
+            color:"#0070C0",
+            name: 'John',
+            data: [19, 14, 5, 4, 4, 3, 2, 1, 1, 2, 34, 11]
+        }],
+        credits:{
+                enabled:false
+            },
+            exporting:{
+                enabled:false
+            }
+    });
+				
+				
+			
+				
+		
+
+		    
+		});
+	</script>
+</head>
+<body>
+    <div class="intro">
+      <div class="topbar">
+        <div class="icon__pantalla"><a href="./../../coyuntura.html"><i class="fa fa-arrow-left"></i></a></div>
+        <div class="title"> <strong>COYUNTURA</strong></div>
+      </div>
+      <div class="grupo">
+        <div class="caja total">
+          <div class="description">
+            <div id="grafico1">     
+                <div class="area" style="height:550px; width:100%"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="grupo">
+        <div class="caja total">
+            <div class="botones">
+                <div class="boton"><a href="#">Compartir</a></div>
+                <div class="boton"><a href="./fichatecnica1.html">Ver resumen de ficha técnica</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><img src="./../../media/bar-footer.png"></div>
+</body>
+</html>

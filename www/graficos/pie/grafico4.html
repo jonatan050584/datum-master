@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Datum</title>
+	<link rel="stylesheet" href="./../../tema/css/estilos.css">
+    <link rel="stylesheet" href="./../../icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../fonts/style.css">
+    <script src="./../../js/jquery.min.js"></script>
+    <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+    <script src="./../../js/highstock.js"></script>
+    <script src="./../../js/data.js"></script>
+    <script src="./../../js/exporting.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		$(document).ready(function() { 
+			
+
+        // Build the chart
+        $('#grafico1 .area').highcharts({
+            chart: {
+                plotBackgroundColor: 0,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Maltrato a Nadine Heredia'
+            },
+            subtitle: {
+			            text: 'Nadine Heredia ha dicho que ha sido maltratada por la comisión que investiga a Martín Belaúnde al momento de acudir a dar sus declaraciones. ¿Piensa Ud. que Nadine Heredia, en realidad, ha sido maltratada o no ha sido maltratada por esta comisión investigadora?'
+			        },
+            tooltip: {
+                animation: false,
+                enabled: false
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+	                    distance: -30,
+	                    format: '{point.percentage:.1f} %',
+	                    style: {
+	                        fontWeight: 'bold',
+	                        color: 'white',
+	                        fontSize: '11px',
+	                        textShadow: '0px 1px 0px black'
+	                    }
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: "Brands",
+                colorByPoint: true,
+                data: [{
+                	name: "No ha sido maltratada",
+                	y: 61,
+                    color: '#00B0F0'
+                },{
+                	name: "Ns/nc",
+                	y: 16,
+                    color:"#BFBFBF",
+                },{
+                	name: "Sí ha sido maltratada",
+                    color:"#0070C0",
+                	y: 23
+                }]
+            }],
+            credits:{
+	        	enabled:false
+	        },
+	        exporting:{
+	        	enabled:false
+	        }
+        });
+    });
+	</script>
+</head>
+<body>
+    <div class="intro">
+      <div class="topbar">
+        <div class="icon__pantalla"><a href="./../../coyuntura.html"><i class="fa fa-arrow-left"></i></a></div>
+        <div class="title"> <strong>COYUNTURA</strong></div>
+      </div>
+      <div class="grupo">
+        <div class="caja total">
+          <div class="description">
+            <div id="grafico1">     
+                <div class="area" style="height:550px; width:100%"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="grupo">
+        <div class="caja total">
+            <div class="botones">
+                <div class="boton"><a href="#">Compartir</a></div>
+                <div class="boton"><a href="./fichatecnica4.html">Ver resumen de ficha técnica</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="footer"><img src="./../../media/bar-footer.png"></div>
+</body>
+</html>
